@@ -1,0 +1,22 @@
+# Template file for 'libseagull'
+pkgname=libseagull
+version=0.6.0
+revision=1
+build_style=meson
+hostmakedepends="pkg-config intltool automake libtool gettext gettext-devel glib-devel"
+makedepends="cmake libgirepository-devel gtk4-devel libadwaita-devel gtk+-devel gtksourceview5-devel libspelling-devel gobject-introspection"
+short_desc="SQLite helper library"
+maintainer="Ilya <ISPonomarev@yahoo.com>"
+license="LGPL-2.1-or-later"
+homepage="https://keep.imfreedom.org/seagull/seagull"
+distfiles="https://keep.imfreedom.org/seagull/seagull/archive/v${version}.tar.bz2"
+checksum=4894fbffcb1f6e768ec29010d63a3120306b855aab29ef10d21b237522d49c11
+python_version=3
+
+libseagull-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+	vmove usr/include/seagull-1.0
+	vmove usr/lib/pkgconfig/seagull.pc
+	}
+}

@@ -1,0 +1,22 @@
+# Template file for 'libibis'
+pkgname=libibis
+version=0.14.0
+revision=1
+build_style=meson
+hostmakedepends="pkg-config intltool automake libtool gettext gettext-devel glib-devel python3-devel cmake"
+makedepends="cmake libgirepository-devel gobject-introspection libbirb-devel libbirb libhasl-devel libhasl python3-devel pango-devel libidn-devel"
+short_desc="GObjects based IRCv3 library"
+maintainer="Ilya <ISPonomarev@yahoo.com>"
+license="LGPL-2.1-or-later"
+homepage="https://keep.imfreedom.org/ibis/ibis"
+distfiles="https://keep.imfreedom.org/ibis/ibis/archive/v${version}.tar.bz2"
+checksum=5fb7faae050069eec3bb47ab20d32f22abf4331d87c4e2b509a3d5c489085a30
+python_version=3
+
+libibis-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+	vmove usr/include/ibis-1.0
+	vmove usr/lib/pkgconfig/ibis.pc
+	}
+}

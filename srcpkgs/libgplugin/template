@@ -1,0 +1,21 @@
+# Template file for 'libgplugin'
+pkgname=libgplugin
+version=0.44.2
+revision=1
+build_style=meson
+hostmakedepends="pkg-config intltool automake libtool gettext gettext-devel glib-devel python3-gobject-devel python3-gobject glib libgirepository python3 libglib-devel gi-docgen gobject-introspection perl-Glib-Object-Introspection gir-freedesktop python3-devel"
+makedepends="cmake libgirepository-devel gtk4-devel libadwaita-devel gtk+-devel gtksourceview5-devel libspelling-devel gobject-introspection help2man lua lua-devel lua53-lgi python3-gobject-devel python3-gobject libglib-devel gi-docgen perl-Glib-Object-Introspection gir-freedesktop python3-devel"
+short_desc="GObject based library that implements a reusable plugin system"
+maintainer="Ilya <ISPonomarev@yahoo.com>"
+license="LGPL-2.0-or-later"
+homepage="https://keep.imfreedom.org/gplugin/gplugin"
+distfiles="https://keep.imfreedom.org/gplugin/gplugin/archive/v${version}.tar.bz2"
+checksum=36b675dc65652bd6d6b41aaffc24123f3c247a6931c3d5526b3d224293547209
+
+libgplugin-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+	vmove usr/include/gplugin-1.0
+	vmove usr/lib/pkgconfig/gplugin.pc
+	}
+}

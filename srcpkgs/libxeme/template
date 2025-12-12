@@ -1,0 +1,21 @@
+# Template file for 'libxeme'
+pkgname=libxeme
+version=0.1.0
+revision=1
+build_style=meson
+hostmakedepends="pkg-config intltool automake libtool gettext gettext-devel glib-devel"
+makedepends="cmake gobject-introspection libbirb-devel libbirb"
+short_desc="High level XMPP parsing library based on GObjects"
+maintainer="Ilya <ISPonomarev@yahoo.com>"
+license="LGPL-2.1-or-later"
+homepage="https://keep.imfreedom.org/xeme/xeme"
+distfiles="https://keep.imfreedom.org/xeme/xeme/archive/tip.tar.bz2"
+checksum=ac72ffc47397c6b9ae5bb39c572731127adb99cdd5c91cee18154649c956c4d6
+
+libxeme-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+	vmove usr/include/xeme-1.0
+	vmove usr/lib/pkgconfig/xeme.pc
+	}
+}

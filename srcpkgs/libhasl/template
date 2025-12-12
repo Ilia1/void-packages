@@ -1,0 +1,22 @@
+# Template file for 'libhasl'
+pkgname=libhasl
+version=0.4.0
+revision=1
+build_style=meson
+hostmakedepends="pkg-config intltool automake libtool gettext gettext-devel glib-devel"
+makedepends="cmake libgirepository-devel gobject-introspection libidn-devel"
+short_desc="Hassle-free Authentication and Security Layer client library"
+maintainer="Ilya <ISPonomarev@yahoo.com>"
+license="LGPL-2.1-or-later"
+homepage="https://keep.imfreedom.org/hasl/hasl"
+distfiles="https://keep.imfreedom.org/hasl/hasl/archive/v${version}.tar.bz2"
+checksum=9f7e183bea17861ab38edcb75c596f6fbf34ddd9698d69a0a52c6887c9520351
+python_version=3
+
+libhasl-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+	vmove usr/include/hasl-1.0
+	vmove usr/lib/pkgconfig/hasl.pc
+	}
+}

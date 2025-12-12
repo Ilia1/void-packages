@@ -1,0 +1,13 @@
+# Template file for 'libpurple-discord'
+pkgname=libpurple-discord
+version=f60596c3e6a22f819ad408232257dca1757a8519
+revision=1
+build_style=gnu-makefile
+hostmakedepends="pkg-config ImageMagick gettext"
+makedepends="json-glib-devel libpurple-devel nss-devel qrencode-devel"
+short_desc="Discord plugin for libpurple"
+maintainer="Spark <sparksman@disroot.org>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/EionRobb/purple-discord"
+distfiles="https://github.com/EionRobb/purple-discord/archive/refs/tags/nightly-${version}.tar.gz>purple-discord.tar.gz"
+checksum=4f462facf18d200f7ff9f4c3e96f6a6b95f6c13f553d343c91eb861d1b2bebdd

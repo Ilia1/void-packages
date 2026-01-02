@@ -1,6 +1,6 @@
 # Template file for 'rlwrap'
 pkgname=rlwrap
-version=0.47
+version=0.48
 revision=1
 build_style=gnu-configure
 hostmakedepends="automake"
@@ -11,7 +11,7 @@ maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/hanslub42/rlwrap"
 distfiles="https://github.com/hanslub42/rlwrap/archive/refs/tags/v${version}.tar.gz"
-checksum=07cd1c52aee96c05bf0db4ed8da63e854f07a1ca134b21b73c5d5d1969b337b5
+checksum=b2721b1c0147aaafc98e6a31d875316ba032ad336bec7f2a8bc538f9e3c6db60
 
 pre_configure() {
 	autoreconf -fi
